@@ -83,7 +83,6 @@ async def rmchat(_, message):
     & filters.reply
     & ~filters.private
     & ~filters.bot
-    & ~filters.edited,
     group=2,
 )
 async def LogicAI(client: Client, message: Message):
@@ -120,7 +119,6 @@ async def LogicAI(client: Client, message: Message):
     & filters.reply
     & filters.private
     & ~filters.bot
-    & ~filters.edited,
     group=2,
 )
 async def LogicAI(client: Client, message: Message):
