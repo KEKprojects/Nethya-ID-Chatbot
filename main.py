@@ -78,12 +78,7 @@ async def rmchat(_, message):
 
 
 
-@bot.on_message(filters.text,
-    & ~filters.reply,
-    & ~filters.private,
-    & ~filters.bot,
-    group=2
-)
+@bot.on_message(filters.text & (filters.reply | filters.private))
 async def LogicAI(client: Client, message: Message):
 
    LogicDB = MongoClient(MONGO_URL)
@@ -113,12 +108,7 @@ async def LogicAI(client: Client, message: Message):
    
 
 
-@bot.on_message(filters.text,
-    & ~filters.reply,
-    & ~filters.private,
-    & ~filters.bot,
-    group=2
-)
+@bot.on_message(filters.text & (filters.reply | filters.private))
 async def LogicAI(client: Client, message: Message):
     await bot.send_chat_action(message.chat.id, "typing")
     if not message.text:
