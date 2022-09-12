@@ -78,11 +78,11 @@ async def rmchat(_, message):
 
 
 
-@bot.on_message(filters.text
-    & filters.reply
-    & ~filters.private
-    & ~filters.bot
-    group=2,
+@bot.on_message(filters.text,
+    & filters.reply,
+    & ~filters.private,
+    & ~filters.bot,
+    group=2
 )
 async def LogicAI(client: Client, message: Message):
 
@@ -113,11 +113,11 @@ async def LogicAI(client: Client, message: Message):
    
 
 
-@bot.on_message(filters.text
-    & filters.reply
-    & filters.private
-    & ~filters.bot
-    group=2,
+@bot.on_message(filters.text,
+    & filters.reply,
+    & filters.private,
+    & ~filters.bot,
+    group=2
 )
 async def LogicAI(client: Client, message: Message):
     await bot.send_chat_action(message.chat.id, "typing")
